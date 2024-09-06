@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
     <script type="text/javascript">
         // Получаем параметр 'page' из URL
         function getParameterByName(name) {
-            const url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-
-        // Выполняем редирект на страницу, указанную в параметре 'page'
-        window.onload = function() {
-            const page = getParameterByName('page');
+@@ -22,12 +21,9 @@
             if (page) {
                 window.location.href = page;
             } else {
+                document.body.innerHTML = "<h1>Error: No page specified</h1>";
                 window.location.href = 'https://tiktok.com';
             }
         }
     </script>
 </head>
+<body>
+    <p>...</p>
+</body>
 </html>
